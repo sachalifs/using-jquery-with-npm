@@ -1,0 +1,27 @@
+{
+  "name": "jquery-browserify",
+  "description": "",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "browserify-shim": "^3.8.11",
+    "parcelify": "^2.1.0"
+  },
+  "dependencies": {
+    "tipso": "^1.0.8"
+  },
+  "browser": {
+    "tipso": "./node_modules/tipso/src/tipso.js"
+  },
+  "scripts": {
+    "build": "browserify entry.js --debug > bundle.js -p [ parcelify -o bundle.css ]"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "style": [
+    "./node_modules/tipso/src/tipso.css"
+  ]
+}
